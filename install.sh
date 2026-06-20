@@ -3,18 +3,18 @@
 #
 # Usage (one-liner):
 #   curl --proto '=https' --tlsv1.2 -fsSL \
-#     "https://raw.githubusercontent.com/humangr-labs/clw-releases/main/install.sh" \
+#     "https://raw.githubusercontent.com/HumanGuardrail/clw-releases/main/install.sh" \
 #     | CLW_VERSION=<version> sh
 #
 # PREFERRED INSTALL IS HOMEBREW, NOT THIS SCRIPT:
-#   brew install humangr-labs/clw/clw
+#   brew install humanguardrail/clw/clw
 # Brew is preferred on macOS because a brew-installed (formula) binary is NOT
 # Gatekeeper-quarantined, whereas a curl-downloaded binary IS — this script
 # strips the quarantine attribute itself (see the macOS step below), but brew
 # avoids the issue entirely. See docs/INSTALL.md.
 #
 # The download surface is PUBLIC and ANONYMOUS: release assets live on the public
-# mirror repo humangr-labs/clw-releases as GitHub Release assets (see
+# mirror repo HumanGuardrail/clw-releases as GitHub Release assets (see
 # docs/DISTRIBUTION.md). No credential is needed to fetch them.
 #
 # What it does:
@@ -60,9 +60,9 @@
 set -eu
 
 # --- constants ---------------------------------------------------------------
-# Public mirror repo (humangr-labs/clw-releases) GitHub Release download base.
+# Public mirror repo (HumanGuardrail/clw-releases) GitHub Release download base.
 # Assets are at <base>/v<version>/<file> — anonymous, no auth.
-DEFAULT_BASE_URL="https://github.com/humangr-labs/clw-releases/releases/download"
+DEFAULT_BASE_URL="https://github.com/HumanGuardrail/clw-releases/releases/download"
 
 # EMBEDDED minisign trust root (the pin). This is the production public key —
 # byte-equal to docs/minisign.pub in the source repo. We verify the release
